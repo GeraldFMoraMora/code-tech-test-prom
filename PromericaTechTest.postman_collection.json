@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "ef9ff21c-7582-4373-acd8-4563277c0ae3",
+		"name": "PromericaTechTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4473138"
+	},
+	"item": [
+		{
+			"name": "ClientResource",
+			"item": [
+				{
+					"name": "addClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"116040975\",\r\n    \"firstName\": \"Gerald\",\r\n    \"lastName\": \"Mora Mora\",\r\n    \"phone\": \"+50684849925\",\r\n    \"birthdate\": \"15-04-1995\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/client/addClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"addClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delClient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/client/delClient/1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"delClient",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1234\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe Mora\",\r\n    \"phone\": \"+50688888888\",\r\n    \"birthdate\": \"10-12-2000\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/client/updateClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"updateClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/client/getClientById/116040975",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"getClientById",
+								"116040975"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listClientByBirthdate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/client/listClientByBirthdate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"listClientByBirthdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listClientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/client/listClientById",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"listClientById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listClientByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/client/listClientByName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"client",
+								"listClientByName"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testConnection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
