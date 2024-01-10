@@ -18,10 +18,31 @@ public class ClientService {
     private  ClientDao clientDao;
 
     public Response addClient(String id, String firstName, String lastName, String phone, Date birthdate) {
-        clientDao.addClient(id, firstName, lastName, phone, birthdate);
         Response response = new Response();
-        response.setError(false);
-        response.setMessage(MessageCode.MSG_0001);
+        if(id.length()<50){
+            if(firstName.length()<20){
+                if(lastName.length()<20){
+                    if(phone.length()<20){
+                        clientDao.addClient(id, firstName, lastName, phone, birthdate);
+                        response.setError(false);
+                        response.setMessage(MessageCode.MSG_0001);
+                    }else{
+                        response.setError(true);
+                        response.setMessage(MessageCode.Err_0005);
+                    }
+                }else{
+                    response.setError(true);
+                    response.setMessage(MessageCode.Err_0004);
+                }
+            }else{
+                response.setError(true);
+                response.setMessage(MessageCode.Err_0003);
+            }
+        }else{
+            response.setError(true);
+            response.setMessage(MessageCode.Err_0006);
+        }
+
         return response;
     }
 
@@ -41,10 +62,31 @@ public class ClientService {
 
     public Response updateClient(String id, String firstName, String lastName, String phone, Date birthdate) {
         Response response = new Response();
+        
         if(clientDao.getClientById(id)!=null){
-            clientDao.updateClient(id, firstName, lastName, phone, birthdate);
-            response.setError(false);
-            response.setMessage(MessageCode.MSG_0003);
+            if(id.length()<50){
+            if(firstName.length()<20){
+                if(lastName.length()<20){
+                    if(phone.length()<20){
+                        clientDao.updateClient(id, firstName, lastName, phone, birthdate);
+                        response.setError(false);
+                        response.setMessage(MessageCode.MSG_0003);
+                    }else{
+                        response.setError(true);
+                        response.setMessage(MessageCode.Err_0005);
+                    }
+                }else{
+                    response.setError(true);
+                    response.setMessage(MessageCode.Err_0004);
+                }
+            }else{
+                response.setError(true);
+                response.setMessage(MessageCode.Err_0003);
+            }
+        }else{
+            response.setError(true);
+            response.setMessage(MessageCode.Err_0006);
+        }
         }else{
             response.setError(true);
             response.setMessage(MessageCode.Err_0001);
