@@ -2,7 +2,9 @@ package com.test.tech.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.test.tech.global.MessageCode;
 import com.test.tech.model.payload.request.ClientRequest;
+import com.test.tech.model.payload.response.Response;
 import com.test.tech.model.service.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,25 +23,22 @@ public class ClientController {
 
     @GetMapping("/test")
     public String getConection() {
-        return "Hello World!";
+        return MessageCode.MSG_0005;
     }
 
     @PostMapping("/client/addClient")
     public ResponseEntity<?> addClient(@RequestBody ClientRequest input) throws Exception{  
-        clientService.addClient(input.getId(), input.getFirstName(), input.getLastName(), input.getPhone(), input.getBirthdate());
-        return ResponseEntity.ok("ok");
+        return ResponseEntity.ok(clientService.addClient(input.getId(), input.getFirstName(), input.getLastName(), input.getPhone(), input.getBirthdate()));
     }
 
     @GetMapping("/client/delClient/{id}")
     public ResponseEntity<?> delClient(@PathVariable String id) throws Exception{ 
-        clientService.delClient(id);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(clientService.delClient(id));
     }
 
     @PostMapping("/client/updateClient")
     public ResponseEntity<?> updateClient(@RequestBody ClientRequest input) throws Exception{  
-        clientService.updateClient(input.getId(), input.getFirstName(), input.getLastName(), input.getPhone(), input.getBirthdate());
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(clientService.updateClient(input.getId(), input.getFirstName(), input.getLastName(), input.getPhone(), input.getBirthdate()));
     }
 
     @GetMapping("/client/getClientById/{id}")
