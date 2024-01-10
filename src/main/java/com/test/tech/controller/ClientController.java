@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.tech.global.MessageCode;
 import com.test.tech.model.payload.request.ClientRequest;
-import com.test.tech.model.payload.response.Response;
 import com.test.tech.model.service.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;

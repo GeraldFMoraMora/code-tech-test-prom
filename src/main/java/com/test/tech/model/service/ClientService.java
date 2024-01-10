@@ -1,14 +1,12 @@
 package com.test.tech.model.service;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.tech.global.MessageCode;
 import com.test.tech.model.dao.ClientDao;
-import com.test.tech.model.entity.Customer;
 import com.test.tech.model.payload.response.Response;
 
 @Service
