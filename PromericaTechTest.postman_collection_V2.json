@@ -44,7 +44,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/client/delClient/1234",
+							"raw": "http://localhost:8081/client/delClient/116040975",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +53,7 @@
 							"path": [
 								"client",
 								"delClient",
-								"1234"
+								"116040975"
 							]
 						}
 					},
@@ -66,7 +66,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"1234\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe Mora\",\r\n    \"phone\": \"+50688888888\",\r\n    \"birthdate\": \"10-12-2000\"\r\n}\r\n",
+							"raw": "{\r\n    \"id\": \"116040975\",\r\n    \"firstName\": \"Gerald Francisco\",\r\n    \"lastName\": \"Mora Mora\",\r\n    \"phone\": \"+50684849925\",\r\n    \"birthdate\": \"15-04-1995\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
