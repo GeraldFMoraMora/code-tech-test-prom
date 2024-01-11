@@ -1,6 +1,15 @@
-FROM openjdk:17
-VOLUME /tmp
-EXPOSE 8081
-ARG JAR_FILE=target/code-tech-test-prom.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:17-jdk-slim AS build
+
+COPY pom.xml mvnw ./
+COPY .mvn .mvn
+RUN ./mvnw dependency:resolve
+
+COPY src src
+RUN ./mvnw package
+
+FROM openjdk:17-jdk-slim
+EXPOSE 8081 
+EXPOSE 5432
+WORKDIR demo
+COPY --from=build target/*.jar demo.jar
+ENTRYPOINT ["java", "-jar", "demo.jar"]
