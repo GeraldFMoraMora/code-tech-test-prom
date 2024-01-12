@@ -1,4 +1,4 @@
-CREATE DATABASE tech_test_promerica;
+
 
 CREATE TABLE customer (
     id VARCHAR(50) PRIMARY KEY,
